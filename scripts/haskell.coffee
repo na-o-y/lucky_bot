@@ -39,5 +39,3 @@ module.exports = (robot) ->
                   result.success.value,
                   result.success.type,
                   "\`\`\`"].filter((x) -> x.length > 0).join('\n')
-          else
-            msg.send "Unable to evaluate script: #{script}. Request returned with the status code: #{res.statusCode}"
