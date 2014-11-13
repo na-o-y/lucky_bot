@@ -1,0 +1,12 @@
+#!/bin/bash
+
+export HUBOT_SLACK_TOKEN=[YOUR_TOKEN]
+export HUBOT_SLACK_TEAM=[YOUR_TEAM]
+export HUBOT_SLACK_BOTNAME=[YOUR_BOTNAME]
+
+PROJECT_ROOT=[YOUR_PROJECT_ROOT]
+COFFEE_BIN=$PROJECT_ROOT/node_modules/hubot/node_modules/coffee-script/bin/coffee
+FOREVER_BIN=$PROJECT_ROOT/node_modules/forever/bin/forever
+
+cd $PROJECT_ROOT
+$FOREVER_BIN start -c $COFFEE_BIN node_modules/.bin/hubot -a slack
