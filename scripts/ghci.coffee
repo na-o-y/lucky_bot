@@ -15,8 +15,8 @@
 #   na_o_ys
  
 module.exports = (robot) ->
-  robot.hear /^(haskell|hs\!)(\s|\n)+(.*)/i, (msg)->
-    script = msg.match[3]
+  robot.hear /^(haskell|hs\!)(\s|\n)+([^\s\n][\s\S]*)/i, (msg)->
+    script = msg.match[3].trim()
  
     msg.http("http://localhost:3000/eval")
       .query({expr: script})
